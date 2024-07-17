@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+}
+.Menu{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 5em;
+}
+.MenuContainer {
+    background-color: black;
+    color:white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.CreateButton{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: larger;
+    flex:1
+}
+.CreateButton:hover {
+    background-color: black;
+    color: white;
+}
+#GridInput{
+    flex: 1;
+    padding: 1rem;
+}
+.Grid{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.GridContainer{
+    display: flex;
+    width: 960px;
+    height: 960px;
+}
+.GridRow{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.GridElement{
+    flex: 1;
+    border-radius: px;
+    padding: 1%;
+    border: 1px solid black;
+    background-color: white;
+}
+.GridElement:hover {
+    background-color: gray
+}

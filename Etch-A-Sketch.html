@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var created=false
+        function CreateGrid(){
+            let gridSize=document.getElementById("GridInput").value
+            let opacity=0
+            if(gridSize<=100 && gridSize>0){
+                if(created==true){
+                    while (document.getElementById("GridContainer").firstChild) {
+                        document.getElementById("GridContainer").removeChild(document.getElementById("GridContainer").firstChild);
+                    }
+                }
+                let GridContainer=document.getElementById("GridContainer")  
+                for(var i=1;i<=gridSize;i++){
+                    const GridRow = document.createElement("div");
+                    GridRow.classList.add("GridRow")
+                    for(var j=1;j<=gridSize;j++){
+                        const GridElement = document.createElement("div");
+                        GridElement.classList.add("GridElement")
+                        GridElement.addEventListener("click",
+                            function (){GridElement.style.backgroundColor="rgb( "+Math.floor(Math.random() * 255) +", "+ Math.floor(Math.random() * 255) +" , " +   Math.floor(Math.random() * 255)   +  ")";
+                                GridElement.style.opacity=""+opacity+"%";
+                                if(opacity<100){
+                                    opacity+=10
+                                }
+                        })
+
+                        GridRow.appendChild(GridElement)
+                    }
+                    GridContainer.appendChild(GridRow)
+                }
+                created=true
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="Menu">
+        <div class="MenuContainer">
+            <h3>Grid Creator</h3>
+            <input type="number" id="GridInput">
+            <button class="CreateButton" onclick="CreateGrid()">Create</button>
+
+        </div>
+    </div>
+    <div class="Grid">
+        <div class="GridContainer" id="GridContainer">
+
+        </div>
+    </div>
+
+</body>
+</html>
